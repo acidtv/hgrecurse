@@ -1,0 +1,26 @@
+<html>
+<body>
+
+<h1>hglog</h1>
+
+<div class="entries">
+	<table style="width: 600px;">
+		<tr>
+			<th>Repo</th>
+			<th>Commit</th>
+		</tr>
+		{% for item in entries %}
+			<tr>
+				<td nowrap valign="top">{{ item.repo }}</td>
+				<td>
+					{{ item.name }} @ {{ item.date }}<br />
+					{{ item.desc }}<br />
+					<br />
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+
+</body>
+</html>
