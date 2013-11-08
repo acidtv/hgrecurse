@@ -44,12 +44,13 @@ class Hgrecurse:
 
 		return subrepos
 
-	def log(self, limit):
+	def log(self, limit, branch):
 		entries = []
 
 		for repo in self.repos:
 			client = hglib.open(repo)
-			commits = client.log(limit=limit)
+			commits = client.log(date='2013-09-03 to 2013-09-10', branch=branch)
+			#commits = client.log(limit=limit)
 
 			for commit in commits:
 				entries += [{
